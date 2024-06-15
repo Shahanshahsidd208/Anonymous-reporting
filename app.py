@@ -3,9 +3,11 @@ from twilio.rest import Client
 from flask_cors import CORS
 from dotenv import load_dotenv
 import os
+import logging
 
 app = Flask(__name__)
-CORS(app, resources={r"/scan": {"origins": "*"}})
+CORS(app, resources={r"/scan": {"origins": "https://anonymous-reporting-4.onrender.com"}})
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -21,6 +23,7 @@ client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 @app.route('/scan', methods=['POST'])
 def scan():
+ app.logger.info('Request received')
     phone_number = request.form.get('phone_number')
     location = request.form.get('location')
     
@@ -36,6 +39,7 @@ def scan():
         )
         return jsonify({"success": True}), 200
     except Exception as e:
+ app.logger.error(f'Error processing request: {str(e)}')
         return jsonify({"success": False, "error": str(e)}), 500
 
 # Route to confirm server is running

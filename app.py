@@ -21,6 +21,12 @@ AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
 TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
 DEVELOPER_PHONE_NUMBER = os.getenv('DEVELOPER_PHONE_NUMBER')
 
+# Log environment variables to ensure they are loaded (excluding sensitive ones)
+app.logger.info(f"ACCOUNT_SID: {ACCOUNT_SID}")
+app.logger.info(f"AUTH_TOKEN: {'***' + AUTH_TOKEN[-4:]}")  # Masking sensitive part
+app.logger.info(f"TWILIO_PHONE_NUMBER: {TWILIO_PHONE_NUMBER}")
+app.logger.info(f"DEVELOPER_PHONE_NUMBER: {DEVELOPER_PHONE_NUMBER}")
+
 # Initialize Twilio client outside of route handler
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
@@ -30,7 +36,10 @@ def scan():
     phone_number = request.form.get('phone_number')
     location = request.form.get('location')
     
+    app.logger.info(f'Received data - Phone Number: {phone_number}, Location: {location}')
+    
     if not phone_number or not location:
+        app.logger.error('Phone number or location not provided')
         return jsonify({"success": False, "error": "Phone number and location are required"}), 400
     
     try:
@@ -40,6 +49,7 @@ def scan():
             from_=TWILIO_PHONE_NUMBER,
             to=DEVELOPER_PHONE_NUMBER
         )
+        app.logger.info('Message sent successfully')
         return jsonify({"success": True}), 200
     except Exception as e:
         app.logger.error(f'Error processing request: {str(e)}')

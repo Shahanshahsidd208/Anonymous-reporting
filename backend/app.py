@@ -1,15 +1,20 @@
 from flask import Flask, request, jsonify
 from twilio.rest import Client
 from flask_cors import CORS
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
 CORS(app)
 
-# Twilio configuration
-ACCOUNT_SID = 'AC4780812bbf205dce89373df85efe437d'
-AUTH_TOKEN = '0b1d7fe4f863feb0059d41d60cba9314'
-TWILIO_PHONE_NUMBER = '+19853338520'
-DEVELOPER_PHONE_NUMBER = '+917063031336'
+# Load environment variables from .env file
+load_dotenv()
+
+# Twilio configuration using environment variables
+ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
+AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
+TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
+DEVELOPER_PHONE_NUMBER = os.getenv('DEVELOPER_PHONE_NUMBER')
 
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 

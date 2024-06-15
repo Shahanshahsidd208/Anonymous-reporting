@@ -16,6 +16,7 @@ AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
 TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
 DEVELOPER_PHONE_NUMBER = os.getenv('DEVELOPER_PHONE_NUMBER')
 
+# Initialize Twilio client
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 @app.route('/scan', methods=['POST'])
@@ -38,4 +39,4 @@ def scan():
         return jsonify({"success": False, "error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))

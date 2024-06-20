@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 main {
@@ -29,16 +30,17 @@ main {
     margin-bottom: 20px;
 }
 
- .header h1 {
+.header h1 {
     color: #ffffff;
     margin-bottom: 10px;
 }
+
 .p1 {
     color: #ffffff;
     margin-bottom: 20px;
-
 }
-.container h1{
+
+.container h1 {
     color: #8f0404;
     margin-bottom: 20px;
 }
@@ -96,13 +98,14 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     background-color: #8f0404;
-   padding-right: 40px; /* Added padding for both ends */
+    padding: 10px 20px; /* Added padding for both ends */
     color: #fff;
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 1000;
     height: 60px;
+    box-sizing: border-box; /* Ensure padding is included in element's total width */
 }
 
 .navbar .logo {
@@ -111,7 +114,7 @@ button:hover {
 }
 
 .navbar .logo img {
-    height: 60px;
+    height: 40px; /* Reduced height for better scaling */
     width: auto;
 }
 
@@ -168,7 +171,7 @@ button:hover {
     text-align: center;
     width: 100%;
     position: fixed;
-    top: 40px;
+    top: 60px;
     z-index: 999;
 }
 
@@ -190,21 +193,23 @@ footer .footer-content p {
 /* Responsive styles */
 @media (max-width: 600px) {
     .navbar {
-        padding-right: 20px; 
+        padding: 10px; /* Adjust padding for smaller screens */
     }
-    .navbar .logo{
+
+    .navbar .logo {
         height: 30px;
     }
 
     .navbar .logo p {
-        font-size: 11px; 
+        font-size: 11px; /* Smaller font size for small screens */
     }
 
     .navbar .nav-links {
-        font-size:xx-small;
+        font-size: xx-small;
         display: none;
         flex-direction: column;
         width: 100%;
+        text-align: center; /* Center align the nav links */
     }
 
     .navbar .nav-links.active {

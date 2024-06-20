@@ -25,17 +25,26 @@ main {
     max-width: 400px;
     width: 100%;
     text-align: center;
-    margin-top: 20px; /* Adjust margin-top for additional spacing if needed */
-    margin-bottom: 20px; /* Adjust margin-bottom for additional spacing if needed */
+    margin-top: 80px; /* Adjusted to account for fixed header */
+    margin-bottom: 20px;
 }
 
-h1 {
-    color: #333;
+ .header h1 {
+    color: #ffffff;
     margin-bottom: 10px;
+}
+.p1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+
+}
+.container h1{
+    color: #8f0404;
+    margin-bottom: 20px;
 }
 
 p {
-    color: #555;
+    color: #3a3a3a;
     margin-bottom: 20px;
 }
 
@@ -69,7 +78,7 @@ label {
 button {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #8f0404;
     color: white;
     border: none;
     border-radius: 4px;
@@ -78,7 +87,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #6f0101;
 }
 
 /* Navbar styles */
@@ -86,19 +95,30 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #003366;
-    padding: 10px 20px;
+    background-color: #8f0404;
+   padding-right: 40px; /* Added padding for both ends */
     color: #fff;
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 1000; /* Ensure the navbar is always on top */
-    height: 60px; /* Fixed height for the navbar */
+    z-index: 1000;
+    height: 60px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
 }
 
 .navbar .logo img {
-    height: 40px; /* Fixed height for the logo */
-    width: auto; /* Maintain aspect ratio */
+    height: 60px;
+    width: auto;
+}
+
+.navbar .logo p {
+    margin-left: 10px;
+    font-size: 18px;
+    white-space: nowrap;
 }
 
 .navbar ul {
@@ -118,37 +138,83 @@ button:hover {
     font-weight: bold;
 }
 
+.navbar ul li a:hover {
+    color: #c4c4c4; /* Change color on hover */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
 /* Header styles */
 .header {
-    background-color: #004080;
-    color: #fff;
-    padding: 10px 0; /* Make the header thin */
+    background-color: #936c01;
+    color: #fffafa;
+    padding: 10px 0;
     text-align: center;
     width: 100%;
     position: fixed;
-    top: 60px; /* Position just below the navbar */
-    z-index: 999; /* Ensure the header is below the navbar but above the content */
+    top: 40px;
+    z-index: 999;
 }
 
 /* Footer styles */
 footer {
-    background-color: #003366;
+    background-color: #2e2e2e;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    margin-top: auto; /* Push the footer to the bottom */
+    margin-top: auto;
 }
 
 footer .footer-content p {
+    color: white;
     margin: 5px 0;
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
+    .navbar {
+        padding-right: 20px; 
+    }
+    .navbar .logo{
+        height: 30px;
+    }
+
+    .navbar .logo p {
+        font-size: 11px; 
+    }
+
+    .navbar .nav-links {
+        font-size:xx-small;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
     .navbar ul {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .navbar ul li {
@@ -158,7 +224,7 @@ footer .footer-content p {
 
     .container {
         padding: 15px;
-        margin-top: 130px; /* Adjust margin-top for smaller screens */
+        margin-top: 130px;
     }
 
     h1 {
@@ -178,11 +244,15 @@ footer .footer-content p {
 
     .header {
         padding: 10px 0;
-        top: 60px; /* Adjust top for smaller screens */
+        top: 60px;
     }
 
     footer {
         padding: 15px 0;
+    }
+
+    .hamburger {
+        display: flex;
     }
 }
 

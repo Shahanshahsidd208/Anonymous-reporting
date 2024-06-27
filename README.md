@@ -2,3 +2,4 @@ this is a crime reporting website
 it only captures location.
 it also asks phone number and location permission
 if the location is denied then it doesnot send any data.
+if the number is not submitted then the location captured will be sent to the police station without number.

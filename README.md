@@ -60,7 +60,7 @@ The Anonymous Reporter project comprises two main components:
   - Receives API requests from the Flask backend.
   - Sends SMS messages to the specified police phone numbers.
 
-### Developer's Phone
+### Police's Phone
 
 - **SMS**
   - Receives SMS notifications with crime report details and exact location coordinates.
@@ -90,7 +90,8 @@ The Anonymous Reporter project comprises two main components:
 
 ### Data received on Police mobile numbers
 
-![Screenshot 3](https://github.com/user-attachments/assets/4f996471-70e0-4fb9-81fd-452da2b8d317)
+![image](https://github.com/user-attachments/assets/edbe24ba-d250-461d-8eda-2a4f25185a9e)
+
 
 Details like user exact location coordinates received within 2 seconds.
 

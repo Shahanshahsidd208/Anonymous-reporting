@@ -19,28 +19,31 @@ In many situations, individuals witness crimes or incidents but hesitate to repo
 
 ## Architecture
 
-
 The Anonymous Reporter project comprises two main components:
 
 1. **Frontend**: A simple web interface that allows users to report crimes by entering their phone number and providing location access.
 2. **Backend**: A Flask application that receives the data, processes it, and sends the information via SMS to a designated police phone numbers using the Twilio API.
-![image](https://github.com/user-attachments/assets/b0555e54-aabf-4f1b-9d53-95e78a3d3fe5)
+
+![Architecture Diagram](https://github.com/user-attachments/assets/b0555e54-aabf-4f1b-9d53-95e78a3d3fe5)
 
 ## Architecture Diagram Description
 
 ### Client (User Device)
+
 - **Browser**
   - Initiates requests to the web application.
   - Sends phone number and location data.
   - Displays confirmation messages and error alerts.
 
 ### Frontend
+
 - **HTML/CSS/JavaScript**
   - Hosts the user interface.
   - Handles user input and geolocation.
   - Sends POST requests to the backend server.
 
 ### Backend (Flask Application)
+
 - **Endpoints**
   - `/scan`: Handles incoming POST requests with phone number and location.
   - `/`: Confirms the server is running.
@@ -52,14 +55,15 @@ The Anonymous Reporter project comprises two main components:
   - Sends SMS messages containing the phone number and location to the police phone numbers.
 
 ### Twilio Service
+
 - **API Endpoint**
   - Receives API requests from the Flask backend.
   - Sends SMS messages to the specified police phone numbers.
 
 ### Developer's Phone
-- **SMS**
-  - Receives SMS notifications with crime report details adn exact location coordinates.
 
+- **SMS**
+  - Receives SMS notifications with crime report details and exact location coordinates.
 
 ## Features
 
@@ -67,12 +71,12 @@ The Anonymous Reporter project comprises two main components:
 - **Automatic Reporting**: Automatically sends only the exact location coordinates after waiting 45 seconds if the user hesitates to enter their number and submit.
 - **Anonymous Reporting**: Users can choose to be anonymous reporters or victims themselves.
 - **Widespread Accessibility**: QR codes are pasted all across the city to ensure it is reachable in every corner.
-- ![qrcode police](https://github.com/user-attachments/assets/ef5309cd-7bc2-48f2-b420-2f98a8f249e3)
 
+![QR Code Police](https://github.com/user-attachments/assets/ef5309cd-7bc2-48f2-b420-2f98a8f249e3)
 
 ## Working
 
-1. User accesses the web interface by scanning a QR code pasted in all corner of Hubballi-Dharwad  and enters their phone number.
+1. User accesses the web interface by scanning a QR code pasted in all corners of Hubballi-Dharwad and enters their phone number.
 2. User allows location access.
 3. The system waits 45 seconds; if the user doesn't submit, it sends the location automatically.
 4. Data is sent to the backend server.
@@ -80,13 +84,15 @@ The Anonymous Reporter project comprises two main components:
 
 ## Application Screenshot
 
-![Screenshot_20240716_015450](https://github.com/user-attachments/assets/350e756d-7d0c-448c-9860-b9a6ace7be74)
-![image](https://github.com/user-attachments/assets/36054028-9e39-47d5-849c-e44a0fa0fdeb)
+![Screenshot 1](https://github.com/user-attachments/assets/350e756d-7d0c-448c-9860-b9a6ace7be74)
 
+![Screenshot 2](https://github.com/user-attachments/assets/36054028-9e39-47d5-849c-e44a0fa0fdeb)
 
 ### Data received on Police mobile numbers
-![Screenshot_20240716_015810](https://github.com/user-attachments/assets/4f996471-70e0-4fb9-81fd-452da2b8d317)
-1. Details like user exact location coordinates received within 2 seconds.
+
+![Screenshot 3](https://github.com/user-attachments/assets/4f996471-70e0-4fb9-81fd-452da2b8d317)
+
+Details like user exact location coordinates received within 2 seconds.
 
 ### Prerequisites for developing this project
 

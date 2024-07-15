@@ -18,14 +18,14 @@
 In many situations, individuals witness crimes or incidents but hesitate to report them due to fear of retaliation or concerns about privacy. There is a need for a system that allows anonymous reporting while ensuring that precise location details are captured to aid in incident management and response.
 
 ## Architecture
-![image](https://github.com/user-attachments/assets/b0555e54-aabf-4f1b-9d53-95e78a3d3fe5)
+
 
 The Anonymous Reporter project comprises two main components:
 
 1. **Frontend**: A simple web interface that allows users to report crimes by entering their phone number and providing location access.
 2. **Backend**: A Flask application that receives the data, processes it, and sends the information via SMS to a designated police phone numbers using the Twilio API.
+![image](https://github.com/user-attachments/assets/b0555e54-aabf-4f1b-9d53-95e78a3d3fe5)
 
-![Architecture Diagram](link-to-your-architecture-diagram.png)
 ## Architecture Diagram Description
 
 ### Client (User Device)
@@ -49,16 +49,16 @@ The Anonymous Reporter project comprises two main components:
 - **Environment**
   - Uses environment variables for configuration (Twilio credentials, etc.).
 - **Twilio Client**
-  - Sends SMS messages containing the phone number and location to the developer.
+  - Sends SMS messages containing the phone number and location to the police phone numbers.
 
 ### Twilio Service
 - **API Endpoint**
   - Receives API requests from the Flask backend.
-  - Sends SMS messages to the specified developer phone number.
+  - Sends SMS messages to the specified police phone numbers.
 
 ### Developer's Phone
 - **SMS**
-  - Receives SMS notifications with crime report details.
+  - Receives SMS notifications with crime report details adn exact location coordinates.
 
 
 ## Features

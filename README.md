@@ -72,7 +72,8 @@ The Anonymous Reporter project comprises two main components:
 - **Anonymous Reporting**: Users can choose to be anonymous reporters or victims themselves.
 - **Widespread Accessibility**: QR codes are pasted all across the city to ensure it is reachable in every corner.
 
-![QR Code Police](https://github.com/user-attachments/assets/ef5309cd-7bc2-48f2-b420-2f98a8f249e3)
+![image](https://github.com/user-attachments/assets/ca11e8c1-72e7-4ae1-99d8-02c592889afe)
+
 
 ## Working
 
@@ -84,7 +85,8 @@ The Anonymous Reporter project comprises two main components:
 
 ## Application Screenshot
 
-![Screenshot 1](https://github.com/user-attachments/assets/350e756d-7d0c-448c-9860-b9a6ace7be74)
+![image](https://github.com/user-attachments/assets/cea39b44-da36-4b89-9370-5aa3cfbb2b91)
+
 
 ![Screenshot 2](https://github.com/user-attachments/assets/36054028-9e39-47d5-849c-e44a0fa0fdeb)
 

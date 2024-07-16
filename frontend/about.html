@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hubballi-Dharwad City Police</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logoksp.png" alt="Hubballi Dharwad Police Logo">
+            <p class="p1">Hubballi-Dharwad City Police</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="./">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>About Us</h1>
+    </div>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>Hubballi-Dharwad Police</h2>
+                <p>The Hubballi-Dharwad Police are dedicated to ensuring the safety and security of the city's residents. They maintain a vigilant presence across all neighborhoods and are equipped to respond swiftly to any incidents. The force is committed to community policing, fostering a sense of trust and collaboration between law enforcement and the public.</p>
+            </section>
+            
+            <section class="history">
+                <h2>Our History</h2>
+                <p> Hubballi Dharwad Police Commissionerate was carved out of Dharwad District and established in the year 1989, vide Government Order No: HD-91/POP/1989, Dated: 17-10-1989. The commissionerate area covers  202.3 Sq.Kms. The unit have 4 Sub-Divisions, 15 law and order Police Stations,  4 Traffic Police Stations and 2 Special Police Stations.</p>
+            </section>
+
+            <section class="success-stories">
+                <h2>Success Stories</h2>
+                <p>We are proud of our achievements in enhancing public safety. Here are some of our success stories:</p>
+                <ul>
+                    <li>Implemented a city-wide surveillance system that reduced crime rates by 20%.</li>
+                    <li>Successfully conducted community outreach programs that improved police-community relations.</li>
+                    <!-- Add more success stories -->
+                </ul>
+            </section>
+
+            <section class="mission-vision">
+                <h2>Mission and Vision</h2>
+                <p><strong>Mission:</strong> To serve and protect the people of Hubballi-Dharwad by maintaining law and order, preventing crime, and ensuring a safe and secure environment.</p>
+                <p><strong>Vision:</strong> To be a model police department, known for our commitment to public safety, community partnerships, and continuous improvement.</p>
+            </section>
+
+            <section class="community-engagement">
+                <h2>Community Engagement</h2>
+                <p>We believe in working closely with the community to address issues and improve public safety. Our initiatives include neighborhood watch programs, public safety workshops, and partnerships with local organizations.</p>
+            </section>
+
+            <section>
+                <h2>About Our Website</h2>
+                <p>Anonymous Reporter is an innovative platform designed to facilitate secure and anonymous crime reporting. Our mission is to empower individuals to report incidents without fear of retaliation or breach of privacy. By using our service, users can contribute to the safety of their community while remaining anonymous.</p>
+                <p>Our system is simple and user-friendly: users can scan QR codes placed strategically throughout Hubballi-Dharwad to access our web interface. Once on the platform, they can report incidents by providing their phone number and enabling location access. This ensures that precise location details are captured, which are crucial for effective incident management and response.</p>
+                <p>Upon submission, the information is securely transmitted to our backend, where it is processed and sent to the appropriate authorities via SMS using the Twilio API. This method ensures that the reports are quickly and efficiently relayed to law enforcement, enabling prompt action.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Hubli Dharwad Police Department. All rights reserved.</p>
+            <p>For emergencies, call: 100 | For non-emergencies, contact: 080-12345678</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

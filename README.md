@@ -19,7 +19,7 @@ In many situations, individuals witness crimes or incidents but hesitate to repo
 
 ## Architecture
 
-The Anonymous Reporter project comprises two main components:
+The Anonymous Reporter project comprises two main components:-
 
 1. **Frontend**: A simple web interface that allows users to report crimes by entering their phone number and providing their location access.
 2. **Backend**: A Flask application that receives the data, processes it, and sends the information via SMS to a designated police phone numbers using the Twilio API.

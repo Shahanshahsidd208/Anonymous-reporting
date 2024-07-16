@@ -84,7 +84,7 @@
             }
         };
 
-        // Set a timeout to send location data automatically after 60 seconds
+        //This sets a timeout to send location data automatically after 60 seconds
         const timeoutId = setTimeout(() => {
             if (locationData && !document.getElementById('phone_number').value && !formSubmitted) {
                 sendLocation();

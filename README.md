@@ -157,3 +157,9 @@ For any inquiries or support, please contact:
   - [Email](mailto:shahanshahsidd208@gmail.com)
   - [LinkedIn](https://www.linkedin.com/in/shahanshah-siddiqui-851354304/)
   - [GitHub](https://github.com/Shahanshahsidd208)
+
+ - **Mehwish Nidgundi**
+  - [Email](mailto:mehwish.codes@gmail.com)
+  - [LinkedIn](https://www.linkedin.com/in/mehwish-nidgundi-712372238/)
+  - [GitHub](https://github.com/mehwishferoz)
+

@@ -10,7 +10,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    background-color: #8f0404; /* Dark red */
+    background-color: #8f0404;
     color: #fff;
     padding: 10px 20px;
     display: flex;

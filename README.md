@@ -147,7 +147,7 @@ Details like user exact location coordinates received within 2 seconds.
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
+Contributions are welcome Please fork the repository and create a pull request with your changes.
 
 ## License
 

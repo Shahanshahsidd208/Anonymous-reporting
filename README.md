@@ -97,6 +97,7 @@ The Anonymous Reporter project comprises two main components:-
 
 ![image](https://github.com/user-attachments/assets/edbe24ba-d250-461d-8eda-2a4f25185a9e)
 
+## Installation
 
 Details like user exact location coordinates received within 2 seconds.
 
@@ -165,3 +166,7 @@ For any inquiries or support, please contact:
   - [Email](mailto:mehwish.codes@gmail.com)
   - [LinkedIn](https://www.linkedin.com/in/mehwish-nidgundi-712372238/)
   - [GitHub](https://github.com/mehwishferoz)
+- **Pramod Naik**
+  - [Email](mailto:pramodkumta26@gmail.com)
+  - [LinkedIn](https://www.linkedin.com/in/pramod-naik-203902222/)
+  - [GitHub](https://github.com/Pramod26naik)

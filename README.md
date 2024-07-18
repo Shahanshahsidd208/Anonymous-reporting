@@ -99,7 +99,7 @@ The Anonymous Reporter project comprises two main components:-
 
 ## Installation
 
-Details like user exact location coordinates received within 2 seconds.
+Details like user's exact location coordinates received within 2 seconds.
 
 ### Prerequisites for developing this project
 

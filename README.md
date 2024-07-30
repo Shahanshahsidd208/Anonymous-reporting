@@ -52,7 +52,7 @@ The Anonymous Reporter project comprises two main components:-
 - **Environment**
   - Uses environment variables for configuration (Twilio credentials, etc.).
 - **Twilio Client**
-  - Sends SMS messages containing the phone no. and location to the police phone numbers.
+  - Sends SMS messages containing the phone number and location to the police phone numbers.
 
 ### Twilio Service
 

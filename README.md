@@ -22,7 +22,7 @@ In many situations, individuals witness crimes or incidents but hesitate to repo
 The Anonymous Reporter project comprises two main components:-
 
 1. **Frontend**: A simple web interface that allows users to report crimes by entering their phone number and providing their location access.
-2. **Backend**: A Flask application that receives the data, processes it, and sends the information through SMS to a designated police phone numbers using the Twilio API.
+2. **Backend**: A Flask application that receives the data, processes it, and sends the information through SMS to a designated police phone numbers using the 'Twilio API'.
 
 ![Architecture Diagram](https://github.com/user-attachments/assets/b0555e54-aabf-4f1b-9d53-95e78a3d3fe5)
 

@@ -20,7 +20,7 @@ ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
 AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
 TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
 DEVELOPER_PHONE_NUMBER = os.getenv('DEVELOPER_PHONE_NUMBER')
-
+#these things should be updated in env file
 # Log environment variables to ensure they are loaded (excluding sensitive ones)
 app.logger.info(f"ACCOUNT_SID: {ACCOUNT_SID}")
 app.logger.info(f"AUTH_TOKEN: {'***' + AUTH_TOKEN[-4:]}")  # Masking sensitive part

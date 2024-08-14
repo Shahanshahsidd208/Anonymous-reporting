@@ -4,7 +4,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 import os
 import logging
-from flask_socketio import SocketIO  # For real-time WebSocket communication
+
 
 # Initialize Flask application
 app = Flask(__name__)

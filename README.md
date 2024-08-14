@@ -1,6 +1,6 @@
 # Anonymous Reporter
 
-## Table of Contents
+## Table of Contents.
 
 - [Problem Statement](#problem-statement)
 - [Architecture](#architecture)

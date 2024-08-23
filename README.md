@@ -15,7 +15,7 @@
 
 ## Problem Statement
 
-In many situations, individuals witness crimes or incidents but hesitate to report them due to fear of retaliation or concerns about privacy. There is a need for a system that allows anonymous reporting while ensuring that precise location details are captured to aid in incident management and responses
+In many situations, individuals witness crimes or incidents but hesitate to report them due to fear of retaliation or concerns about privacy. There is a need for a system that allows anonymous reporting while ensuring that precise location details are captured to aid in incident management and responses.
 
 ## Architecture
 

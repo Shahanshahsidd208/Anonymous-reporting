@@ -6,7 +6,7 @@ import os
 import logging
 
 
-# Initialize Flask application
+# Initialize Flask application and add origins
 app = Flask(__name__)
 CORS(app, resources={r"/scan": {"origins": "https://anonymous-reporting-4.onrender.com"}})
 

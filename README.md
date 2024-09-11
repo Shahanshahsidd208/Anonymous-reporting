@@ -1,4 +1,4 @@
-# Anonymous Reporte
+# Anonymous Reporter
 
 ## Table of Contents
 

@@ -13,7 +13,7 @@ CORS(app, resources={r"/scan": {"origins": "https://anonymous-reporting-4.onrend
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
-
+# Load the environment variables from .env file
 load_dotenv()
 
 # Twilio configuration using environment variables
